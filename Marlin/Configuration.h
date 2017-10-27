@@ -287,7 +287,7 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -502,7 +502,7 @@
 #define DELTA_PRINTABLE_RADIUS 95.0 // mm
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 257.1 // mm
+#define DELTA_DIAGONAL_ROD 220.0 // mm
 
 // height from z=0 to home position
 #define DELTA_HEIGHT 348.6 // get this value from auto calibrate
@@ -510,12 +510,12 @@
 #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
 // Horizontal distance bridged by diagonal push rods when effector is centered.
-#define DELTA_RADIUS 122.00 //mm  Get this value from auto calibrate
+#define DELTA_RADIUS 175.00 //mm  Get this value from auto calibrate
 
 // Trim adjustments for individual towers
 // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
 // measured in degrees anticlockwise looking from above the printer
-#define DELTA_TOWER_ANGLE_TRIM { 0.69, +0.06, 0.0 } // get these values from auto calibrate
+#define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // get these values from auto calibrate
 
 // delta radius and diaginal rod adjustments measured in mm
 //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -592,7 +592,7 @@
    Override with M92
                                         X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
 */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 160, 85.6 }  // default steps per unit for Kossel (GT2, 20 tooth)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 80, 171.2}  // default steps per unit for Kossel (GT2, 20 tooth)
 
 /**
    Default Max Feed Rate (mm/s)
