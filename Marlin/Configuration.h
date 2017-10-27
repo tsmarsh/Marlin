@@ -505,12 +505,12 @@
 #define DELTA_DIAGONAL_ROD 257.1 // mm
 
 // height from z=0 to home position
-#define DELTA_HEIGHT 348.0 // get this value from auto calibrate
+#define DELTA_HEIGHT 348.6 // get this value from auto calibrate
 
 #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
 // Horizontal distance bridged by diagonal push rods when effector is centered.
-#define DELTA_RADIUS 120.7 //mm  Get this value from auto calibrate
+#define DELTA_RADIUS 122.00 //mm  Get this value from auto calibrate
 
 // Trim adjustments for individual towers
 // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
@@ -599,7 +599,7 @@
    Override with M203
                                         X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
 */
-#define DEFAULT_MAX_FEEDRATE          { 5000, 5000, 5000, 50 }
+#define DEFAULT_MAX_FEEDRATE          { 10000, 10000, 10000, 50 }
 
 /**
    Default Max Acceleration (change/s) change = mm/s
