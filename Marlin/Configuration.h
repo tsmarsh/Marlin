@@ -222,7 +222,7 @@
 
    :{ 0:'No power switch', 1:'ATX', 2:'X-Box 360' }
 */
-#define POWER_SUPPLY 1
+#define POWER_SUPPLY 0
 
 #if POWER_SUPPLY > 0
 // Enable this option to leave the PSU off at startup.
@@ -360,9 +360,10 @@
 //  #define  DEFAULT_Ki 0.1
 //  #define  DEFAULT_Kd 12
 
-#define  DEFAULT_Kp 38.50
-#define  DEFAULT_Ki 4.35
-#define  DEFAULT_Kd 85.15
+// E3D Clone
+#define  DEFAULT_Kp 38.31
+#define  DEFAULT_Ki 4.10
+#define  DEFAULT_Kd 89.45
 
   // Mendel Parts V9 on 12V
   //#define  DEFAULT_Kp 63.0
@@ -399,9 +400,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-#define  DEFAULT_bedKp 158.87
-#define  DEFAULT_bedKi 29.83
-#define  DEFAULT_bedKd 211.49
+#define  DEFAULT_bedKp 170.98
+#define  DEFAULT_bedKi 18.97
+#define  DEFAULT_bedKd 385.18
 
 //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 //from pidautotune
@@ -493,29 +494,29 @@
 
 #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
 // Set the radius for the calibration probe points - max DELTA_PRINTABLE_RADIUS*0.869 for non-eccentric probes
-#define DELTA_CALIBRATION_RADIUS 40 // mm
+#define DELTA_CALIBRATION_RADIUS 90 // mm
 // Set the steprate for papertest probing
 #define PROBE_MANUALLY_STEP 0.025
 #endif
 
 // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-#define DELTA_PRINTABLE_RADIUS 95.0 // mm
+#define DELTA_PRINTABLE_RADIUS 100.0 // mm
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 220.0 // mm
+#define DELTA_DIAGONAL_ROD 320.0 // mm
 
 // height from z=0 to home position
-#define DELTA_HEIGHT 350.00 // get this value from auto calibrate
+#define DELTA_HEIGHT 309.75 // get this value from auto calibrate
 
 #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
 // Horizontal distance bridged by diagonal push rods when effector is centered.
-#define DELTA_RADIUS 175.00 //mm  Get this value from auto calibrate
+#define DELTA_RADIUS 168.75 //mm  Get this value from auto calibrate
 
 // Trim adjustments for individual towers
 // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
 // measured in degrees anticlockwise looking from above the printer
-#define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // get these values from auto calibrate
+#define DELTA_TOWER_ANGLE_TRIM { -2.24, -0.69, 0.0 } // get these values from auto calibrate
 
 // delta radius and diaginal rod adjustments measured in mm
 //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -592,7 +593,7 @@
    Override with M92
                                         X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
 */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 80, 171.2}  // default steps per unit for Kossel (GT2, 20 tooth)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 160, 171.2}  // default steps per unit for Kossel (GT2, 20 tooth)
 
 /**
    Default Max Feed Rate (mm/s)
@@ -923,7 +924,7 @@
 // @section bedlevel
 
 /**
-   Choose one of the options below to enable G29 Bed Leveling. The parameters
+   Choose one of the options below to enable  Bed Leveling. The parameters
    and behavior of G29 will change depending on your selection.
 
     If using a Probe for Z Homing, enable Z_SAFE_HOMING also!
@@ -980,7 +981,7 @@
 //#define ENABLE_LEVELING_FADE_HEIGHT
 
 // Set the boundaries for probing (where the probe can reach).
-#define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 40)
+#define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS)
 
 #endif
 
@@ -1130,9 +1131,9 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //
-//#define EEPROM_SETTINGS // Enable for M500 and M501 commands
+#define EEPROM_SETTINGS // Enable for M500 and M501 commands
 //#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
-//#define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
+#define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
 
 //
 // Host Keepalive
